@@ -34,7 +34,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     user_message = event.message.text
-    response = gpt_service.get_response(user_message)
+    response = gpt_service.get_law_based_answer(user_message)
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=response))
 
 
